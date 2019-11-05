@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <UserType>Manager</UserType>
+    <FirstName>Bob</FirstName>
+    <LastName>Bobson</LastName>
+    <Phone>555-000-0000</Phone>
+    <Address>100 Home St</Address>
+    <Email>bobbobson@email.com</Email>
+    <StoreID>1</StoreID>
+    <Orders />
+    <LastDate>0001-01-01T00:00:00</LastDate>
+  </User>
+  <User>
+    <UserType>Manager</UserType>
+    <FirstName>Joe</FirstName>
+    <LastName>Joeson</LastName>
+    <Phone>555-000-0001</Phone>
+    <Address>102 Home St</Address>
+    <Email>joejoeson@email.com</Email>
+    <StoreID>2</StoreID>
+    <Orders />
+    <LastDate>0001-01-01T00:00:00</LastDate>
+  </User>
+  <User>
+    <UserType>Manager</UserType>
+    <FirstName>Ben</FirstName>
+    <LastName>Benson</LastName>
+    <Phone>555-000-0002</Phone>
+    <Address>104 Home St</Address>
+    <Email>benbenson@email.com</Email>
+    <StoreID>3</StoreID>
+    <Orders />
+    <LastDate>0001-01-01T00:00:00</LastDate>
+  </User>
+  <User>
+    <UserType>Customer</UserType>
+    <FirstName>Benjamin</FirstName>
+    <LastName>Clegg</LastName>
+    <Phone>555-555-5555</Phone>
+    <Address>999 Home St</Address>
+    <Email>b.clegg@live.com</Email>
+    <StoreID>2</StoreID>
+    <Orders />
+    <LastDate>0001-01-01T00:00:00</LastDate>
+  </User>
+</ArrayOfUser>

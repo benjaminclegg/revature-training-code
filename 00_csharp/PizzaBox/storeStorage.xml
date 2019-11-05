@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Store>
+    <StoreID>1</StoreID>
+    <Address>123 main st</Address>
+    <Orders />
+  </Store>
+  <Store>
+    <StoreID>2</StoreID>
+    <Address>456 main st</Address>
+    <Orders />
+  </Store>
+  <Store>
+    <StoreID>3</StoreID>
+    <Address>789 main st</Address>
+    <Orders />
+  </Store>
+</ArrayOfStore>

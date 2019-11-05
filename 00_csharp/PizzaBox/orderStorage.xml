@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Order>
+    <Id>637085613850108088</Id>
+    <Pizzas>
+      <Pizza>
+        <Crust>Handtossed</Crust>
+        <Size>Large</Size>
+        <Price>9.99</Price>
+        <Type>Hawaiian</Type>
+      </Pizza>
+      <Pizza>
+        <Crust>Thin</Crust>
+        <Size>Large</Size>
+        <Price>9.99</Price>
+        <Type>Veggie</Type>
+      </Pizza>
+    </Pizzas>
+    <StoreId>2</StoreId>
+    <OrderDate>2019-11-05T14:36:25.0163792-06:00</OrderDate>
+  </Order>
+</ArrayOfOrder>
