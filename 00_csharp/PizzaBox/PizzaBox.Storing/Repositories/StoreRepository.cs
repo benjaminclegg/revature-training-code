@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using PizzaBox.Domain.Abstracts;
 using PizzaBox.Domain.Models;
+using PizzaBox.Storing.Connectors;
 
 namespace PizzaBox.Storing.Repositories
 {
@@ -26,6 +27,7 @@ namespace PizzaBox.Storing.Repositories
          if(_storeRepository == null)
          {
             _storeRepository = new List<Store>();
+            //_storeRepository.AddRange(new FileSystemConnector().StoreReadXml());
          }
 
          return _storeRepository;
@@ -34,6 +36,13 @@ namespace PizzaBox.Storing.Repositories
       public void Persist(Store store)
       {
          _storeRepository.Add(store);
+         Save();
+      }
+
+      public void Save()
+      {
+         var fs = new FileSystemConnector();
+         fs.StoreWriteXml(_storeRepository);
       }
 
       public Store RetrieveStoreByID(int storeID)

@@ -1,12 +1,18 @@
-﻿using System;
+﻿using sc = System.Console; //import with alias
 
 namespace HelloWorld.Client
 {
-    class Program
+   /// <summary>
+   /// Contains the start of the program
+   /// </summary>
+    internal class Program
     {
-        static void Main(string[] args)
+       /// <summary>
+       /// Starts the program
+       /// </summary>
+        private static void Main()
         {
-            Console.WriteLine("Hello World!");
+            sc.WriteLine("Hello World!");
         }
     }
 }

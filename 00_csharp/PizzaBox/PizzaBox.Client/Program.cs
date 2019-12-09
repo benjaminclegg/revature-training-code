@@ -36,35 +36,3 @@ namespace PizzaBox.Client
         }
     }
 }
-
-/*
-static void Main()
-{
-   PointOfSale();
-}
-
-private static void PointOfSale()
-{
-   var customer = new Customer();
-   var order = new Order();
-   var store = new Store();
-
-   MakeSale(customer, order, store);
-}
-
-private static void MakeSale(AUser u, Order o, Store s)
-{
-   var pizzas = SelectPizzas();
-   o.Pizzas.AddRange(pizzas);
-   u.Orders.Add(o);
-   s.Orders.Add(o);
-}
-
-private static List<Pizza> SelectPizzas()
-{
-   return new List<Pizza>()
-   {
-      new Pizza();
-   };
-}
- */

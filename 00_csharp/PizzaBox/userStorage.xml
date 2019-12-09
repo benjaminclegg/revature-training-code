@@ -38,10 +38,10 @@
     <FirstName>Benjamin</FirstName>
     <LastName>Clegg</LastName>
     <Phone>555-555-5555</Phone>
-    <Address>999 Home St</Address>
+    <Address>123 Home St</Address>
     <Email>b.clegg@live.com</Email>
-    <StoreID>2</StoreID>
+    <StoreID>3</StoreID>
     <Orders />
-    <LastDate>0001-01-01T00:00:00</LastDate>
+    <LastDate>2019-11-03T18:54:02.7007942-06:00</LastDate>
   </User>
 </ArrayOfUser>

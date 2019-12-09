@@ -1,9 +1,10 @@
 using PizzaBox.Domain.Abstracts;
+using PizzaBox.Domain.Models;
 
 namespace PizzaBox.Domain.Interfaces
 {
    public interface IUserFactory
    {
-      AUser Create<T>() where T : AUser, new();
+      User Create();
    }
 }

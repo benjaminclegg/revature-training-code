@@ -1,17 +1,21 @@
 using System;
 using System.Collections.Generic;
 using PizzaBox.Domain.Abstracts;
-using PizzaBox.Domain.Enums;
 
 namespace PizzaBox.Domain.Models
 {
    public class Order : AOrder
    {
       private List<Pizza> pizzas = new List<Pizza>();
+      private int storeID;
+      private string userEmail;
+      private decimal total;
       
       public List<Pizza> Pizzas { get => pizzas; set => pizzas = value; }
+      public int StoreId { get; set; }
+      public string User { get; set; }
 
-      public decimal TotalCost
+      public decimal TotalCost 
       {
          get
          {
@@ -24,7 +28,8 @@ namespace PizzaBox.Domain.Models
             return sum;
          }
       }
-      public DateTime OrderDate { get; }
+
+      public DateTime OrderDate { get; set; }
 
       public Order()
       {
@@ -33,24 +38,24 @@ namespace PizzaBox.Domain.Models
 
       public bool isEmpty()
       {
-         if(Pizzas == null)
+         foreach(var pizza in Pizzas)
          {
-            return true;
+            if(pizza != null)
+            {
+               return false;
+            }
          }
-         else { return false; }
+         return true;
       }
-   }
-}
 
-/*
-      public List<Pizza> Pizzas { get; }
-
-      public DateTime OrderDate { get; }
-      public Order()
+      public void UpdateDate()
       {
-         //Pizzas = new List<Pizzas>();
          OrderDate = DateTime.Now;
       }
 
+      public override string ToString()
+      {
+         return $" - Order ID: {Id} Order Date: {OrderDate} from Store #{StoreId}";
       }
-      */
+   }
+}

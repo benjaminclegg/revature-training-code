@@ -1,4 +1,9 @@
 namespace MediaWorld.Domain.Interfaces
 {
-   public interface IVolume {}
+   public interface IVolume
+   {
+      bool VolumeUp();
+      bool VolumeDown();
+      bool VolumeMute();
+   }
 }

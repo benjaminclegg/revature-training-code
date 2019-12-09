@@ -1,14 +1,16 @@
 using System;
 using System.Collections.Generic;
 using PizzaBox.Domain.Abstracts;
+using PizzaBox.Domain.Models;
+using PizzaBox.Storing.Connectors;
 
 namespace PizzaBox.Storing.Repositories
 {
    public class UserRepository
    {
-      private List<AUser> _userRepository;
+      private List<User> _userRepository;
 
-      public List<AUser> UserLibrary
+      public List<User> UserLibrary
       {
          get
          {
@@ -21,24 +23,32 @@ namespace PizzaBox.Storing.Repositories
          Initialize();
       }
 
-      private List<AUser> Initialize()
+      private List<User> Initialize()
       {
          if(_userRepository == null)
          {
-            _userRepository = new List<AUser>();
+            _userRepository = new List<User>();
+            _userRepository.AddRange(new FileSystemConnector().UserReadXml());
          }
 
          return _userRepository;
       }
 
-      public void Persist(AUser user)
+      public void Persist(User user)
       {
          _userRepository.Add(user);
+         Save();
       }
 
-      public AUser VerifyUserByEmail(string field)
+      public void Save()
       {
-         foreach(AUser user in this.UserLibrary)
+         var fs = new FileSystemConnector();
+         fs.UserWriteXml(_userRepository);
+      }
+
+      public User VerifyUserByEmail(string field)
+      {
+         foreach(User user in this.UserLibrary)
          {
             if(field == user.Email)
             {

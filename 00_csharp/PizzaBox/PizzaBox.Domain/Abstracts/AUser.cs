@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using PizzaBox.Domain.Interfaces;
 using PizzaBox.Domain.Models;
@@ -14,6 +15,7 @@ namespace PizzaBox.Domain.Abstracts
       private string email;
       private int storeID;
       private List<Order> orders;
+      private DateTime lastDate;
 
 
       public string UserType
@@ -60,9 +62,23 @@ namespace PizzaBox.Domain.Abstracts
 
       public List<Order> Orders { get; set; }
 
+      public DateTime LastDate { get; set; }
+
       public AUser()
       {
          Orders = new List<Order>();
+      }
+
+      public bool isEmpty()
+      {
+         foreach(var order in Orders)
+         {
+            if(order != null)
+            {
+               return false;
+            }
+         }
+         return true;
       }
 
       public override string ToString()
