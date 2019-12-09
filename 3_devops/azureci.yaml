@@ -1,6 +1,6 @@
 name: $(date:yyyymmdd)$(rev:.rr)
 
-triggers:
+trigger:
   - master
 
 stages:
