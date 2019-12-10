@@ -6,13 +6,15 @@ trigger:
 stages:
   - stage: compile
     jobs:
-      - job: aspnet
+      - job: aspnet_build
         pool:
           vmImage: ubuntu-18.04
         steps:
-          - script: |
-              dotnet build 3_devops/Devops.sln
-  # - stage: test
-  # - stage: pack
-  # - stage: deploy
-
+          - script: dotnet build 3_devops/Devops.sln
+  - stage: test
+    jobs:
+      - job: aspnet_test
+        pool:
+          vmImage: ubuntu-18.04
+        steps:
+          - script: dotnet test 3_devops/DevOps.sln
