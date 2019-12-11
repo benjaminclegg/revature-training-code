@@ -35,6 +35,7 @@ stages:
           - task: DotnetGlobalToolInstaller@0
             inputs:
               name: 'dotnet-sonarscanner'
+          - script: dotnet tool install --global dotnet-sonarscanner
           - script: |
               dotnet sonarscanner begin /k:devops-benjaminclegg /d:sonar-login=$SONAR_TOKEN /o:benjaminclegg
               dotnet build 3_devops/Devops.sln
