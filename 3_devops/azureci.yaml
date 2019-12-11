@@ -32,7 +32,9 @@ stages:
         pool:
           vmImage: ubuntu-18.04
         steps:
-          - script: dotnet tool install --global dotnet-sonarscanner
+          - task: DotnetClobalToolInstaller@0
+            inputs:
+              name: 'dotnet-sonarscanner'
           - script: |
               dotnet sonarscanner begin /k:devops-benjaminclegg /d:sonar-login=$SONAR_TOKEN /o:benjaminclegg
               dotnet build 3_devops/Devops.sln
