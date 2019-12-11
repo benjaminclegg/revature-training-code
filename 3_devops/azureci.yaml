@@ -43,7 +43,7 @@ stages:
               /o:benjaminclegg
               dotnet build 3_devops/Devops.sln
               dotnet test 3_devops/Devops.sln --logger trx
-              dotnet sonarscanner end /d:sonar.login=$SONAR_TOKEN
+              dotnet sonarscanner end /d:sonar-login=$SONAR_TOKEN
             env:
               SONAR_TOKEN: $(SONAR_LOGIN)
   - stage: pack
