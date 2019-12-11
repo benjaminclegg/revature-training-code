@@ -35,7 +35,7 @@ stages:
           - script: dotnet tool install --global dotnet-sonarscanner
           - script: |
               dotnet sonarscanner begin \
-              /d:sonar-login=$SONAR_TOKEN \
+              /d:sonar.login=$SONAR_TOKEN \
               /d:sonar.host.url=https://sonarcloud.io/ \
               /d:sonar.cs.opencover.reportsPaths=**/TestResults/*/coverage.opencover.xml \
               /d:sonar.cs.vstest.reportsPaths=**/*.trx \
@@ -43,7 +43,7 @@ stages:
               /o:benjaminclegg
               dotnet build 3_devops/Devops.sln
               dotnet test 3_devops/Devops.sln --logger trx
-              dotnet sonarscanner end /d:sonar-login=$SONAR_TOKEN
+              dotnet sonarscanner end /d:sonar.login=$SONAR_TOKEN
             env:
               SONAR_TOKEN: $(SONAR_LOGIN)
   - stage: pack
