@@ -22,7 +22,7 @@ stages:
               command: test
               projects: 3_devops/Devops.Test.csproj
               arguments: '--collect:"XPlat Code Coverage"'
-          - task: PublishCodeCoverageResult@1
+          - task: PublishCodeCoverageResults@1
             inputs:
               codeCoverageTool: cobertura
               summaryFileLocation: '**/coverage.cobertura.xml'
