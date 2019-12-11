@@ -38,7 +38,7 @@ stages:
               /d:sonar-login=$SONAR_TOKEN \
               /d:sonar.host.url=https://sonarcloud.io/ \
               /d:sonar.cs.opencover.reportsPaths=**/TestResults/*/coverage.opencover.xml \
-              /d:sonar.cs.vstest.reportsPaths=**/* .trx \
+              /d:sonar.cs.vstest.reportsPaths=**/*.trx \
               /k:devops-benjaminclegg \
               /o:benjaminclegg
               dotnet build 3_devops/Devops.sln
