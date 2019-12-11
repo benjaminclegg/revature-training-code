@@ -36,16 +36,16 @@ stages:
           - script: |
               dotnet sonarscanner begin \
               /k:devops-benjaminclegg \
-              /d:sonar.login=$SONAR_TOKEN \
+              /d:sonar.login=$SONAR_LOGIN \
               /d:sonar.host.url=https://sonarcloud.io/ \
               /d:sonar.cs.opencover.reportsPaths=**/TestResults/*/coverage.opencover.xml \
               /d:sonar.cs.vstest.reportsPaths=**/*.trx \
               /o:benjaminclegg
               dotnet build 3_devops/Devops.sln
               dotnet test 3_devops/Devops.sln --logger trx
-              dotnet sonarscanner end /d:sonar.login=$SONAR_TOKEN
+              dotnet sonarscanner end /d:sonar.login=$SONAR_LOGIN
             env:
-              SONAR_TOKEN: $(SONAR_LOGIN)
+              SONAR_LOGIN: $(SONAR_LOGIN)
   - stage: pack
     jobs:
       - job:
